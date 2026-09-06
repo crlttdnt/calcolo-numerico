@@ -1,40 +1,39 @@
-# Calcolo Numerico — Repo d'esame
+# Calcolo Numerico — Esercizi MATLAB per argomento
 
-Repo con esercizi MATLAB svolti (laboratori + temi d'esame) organizzati per
-argomento, da usare come riferimento durante l'esame.
+Ogni esercizio è archiviato sotto la cartella del suo argomento. Ogni file
+contiene: il **testo originale** del punto (per cercarlo con le parole
+dell'esame che hai davanti), il **codice della soluzione**, e la
+**spiegazione riga per riga** con cosa modificare se il testo cambia.
 
-**Come usarla in esame**: non cercare di ricordare il codice a memoria — cerca
-qui l'esercizio più simile a quello richiesto e adattalo. Ogni cartella ha un
-`note.md` con la mappa "cosa devo fare → dove guardare" e i pattern principali
-da riadattare.
+## Come cercare durante l'esame
 
-## Struttura
+1. Leggi il testo del tuo esercizio, individua le parole chiave (es. "metodo
+   di Newton", "spline", "problema di Cauchy"...).
+2. Guarda la tabella sotto per capire in quale cartella cercare.
+3. Apri i file `.md` di quella cartella (i nomi hanno la data del tema
+   d'esame di origine, ma il contenuto conta più del nome).
 
-| Cartella | Argomenti |
+## Mappa parola chiave → cartella
+
+| Parola chiave nel testo | Cartella |
 |---|---|
-| [`01-basi-vettori-matrici/`](./01-basi-vettori-matrici) | scalari, numeri complessi, vettori (creazione/slicing/operazioni), matrici (creazione/sottoblocchi/concatenazione), norme, det, rank |
-| [`02-floating-point-e-script/`](./02-floating-point-e-script) | aritmetica finita, format, script-file, if/for, `diag`/`tril`/`triu`, prima introduzione a `\` |
-| [`03-sistemi-lineari-diretti/`](./03-sistemi-lineari-diretti) | risoluzione sistemi con `\`, fattorizzazione LU, fill-in, fattorizzazione di Cholesky |
-| [`temi-esame/`](./temi-esame) | testi e soluzioni dei temi d'esame passati |
+| grafico di una funzione, zero/radice, `fzero`, metodo di Newton, derivata | `argomenti/radici-equazioni/` |
+| polinomio interpolante, nodi equispaziati, `polyfit`, `polyval`, retta/parabola di regressione | `argomenti/interpolazione-regressione/` |
+| problema di Cauchy, equazione differenziale, metodo di Heun/Eulero, spline, `griddedInterpolant` | `argomenti/equazioni-differenziali/` |
+| integrale, quadratura, trapezi, `trapz`, `integral` | `argomenti/integrazione-numerica/` |
+| sistema lineare, `\`, LU, Cholesky | `argomenti/sistemi-lineari/` *(da popolare)* |
+| vettori, matrici, indicizzazione, operazioni base | `argomenti/basi-vettori-matrici/` *(da popolare)* |
 
-## Mappa rapida per parola chiave
+## Cartella `lib/`
 
-| Parola chiave nel testo dell'esercizio | Vai a |
-|---|---|
-| vettore, indicizzazione, slicing, `linspace`, `:` | `01-basi-vettori-matrici` |
-| operazioni componente per componente, `.*` `./` `.^` | `01-basi-vettori-matrici` |
-| matrice, sottomatrice, concatenazione, righe/colonne | `01-basi-vettori-matrici` |
-| norma, determinante, rango | `01-basi-vettori-matrici` (norme/det/rank base) o `03-sistemi-lineari-diretti` (norme di inverse) |
-| numeri macchina, precisione, cancellazione numerica, `format` | `02-floating-point-e-script` |
-| script-file, `input`, `if`, `for`, ciclo | `02-floating-point-e-script` |
-| matrice diagonale/tridiagonale/a banda, `diag`, `tril`, `triu` | `02-floating-point-e-script` |
-| risolvere sistema lineare, `\`, sistema singolare | `03-sistemi-lineari-diretti` |
-| fattorizzazione LU, pivoting, `lu(A)` | `03-sistemi-lineari-diretti` |
-| fill-in, `spy`, matrice sparsa | `03-sistemi-lineari-diretti` |
-| Cholesky, `chol`, matrice simmetrica definita positiva | `03-sistemi-lineari-diretti` |
-| calcolo dell'inversa via sistemi lineari | `03-sistemi-lineari-diretti` |
+Contiene le funzioni MATLAB non predefinite usate nelle soluzioni (es.
+`newton.m`, `heun.m`). Vanno recuperate dai laboratori del corso e tenute
+aggiornate qui. Ogni script di soluzione usa `addpath(...)` per puntare a
+questa cartella — verifica sempre che il percorso sia corretto rispetto a
+dove ti trovi.
 
-## Da fare
-- [ ] Aggiungere laboratori su interpolazione, integrazione numerica, equazioni
-      differenziali quando disponibili
-- [ ] Aggiungere temi d'esame e relative soluzioni in `temi-esame/`
+## Prossimi passi
+- Aggiungere altri temi d'esame, spezzettandoli per argomento come fatto per
+  il 13/09/2024
+- Popolare `sistemi-lineari/` e `basi-vettori-matrici/` con esercizi presi
+  dai laboratori
